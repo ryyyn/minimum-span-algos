@@ -1,8 +1,10 @@
 # minimum-span-algos
 Two algorithms for solving the minimum spanning tree problem
 
-</b>Building and running</b>
+<b>Building and running</b>
+
 Compile with <code>g++ -std=c++11 -o MST MST.cpp</code> 
+
 run with ./MST -ALGORITHM -INPUT_FILE [-OUTPUT_FILE]
 
 ALGORITHM should be either "Prim", "Dijkstra", or the first letter of either
