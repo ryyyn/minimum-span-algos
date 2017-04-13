@@ -1,46 +1,40 @@
 # minimum-span-algos
-Two algorithms for solving the minimum spanning tree problem
+Two algorithms for solving the minimum spanning tree (MST) problem
 
 <b>Building and running</b>
 
-Compile with <code>g++ -std=c++11 -o MST MST.cpp</code> 
+Compile: <code>g++ -std=c++11 -o MST MST.cpp</code> 
 
-run with ./MST -ALGORITHM -INPUT_FILE [-OUTPUT_FILE]
+Run: <code>./MST -ALGORITHM -INPUT_FILE [-OUTPUT_FILE]</code>
 
-ALGORITHM should be either "Prim", "Dijkstra", or the first letter of either
-Unfortunately I did not have time to implement Sollin's
+ALGORITHM: either "Prim", "Dijkstra", or the first letter of either
 
-INPUT_FILE should be a test file containing a single number on the first line that represents the number of verticies, and subsequent lines containing the adjacency-matrix representation of the graph. No commas.
+INPUT_FILE: a test file containing a single number on the first line that represents the number of verticies, and subsequent lines containing the adjacency-matrix representation of the graph. No commas.
 
-If no OUTPUT_FILE is specified, the program will just report the amount of time it took to generate the mst without writing any output.
-The output will be the mst in adjacency-matrix representation.
+OUTPUT_FILE: if none is specified, the program will simply report the amount of time it took to generate the MST without writing
 
------------------
+The output will be the MST in adjacency-matrix representation.
 
-Random graph generator:
-compile with g++ -std=c++11 -o GraphGen GraphGen.cpp
-run with ./GraphGen -SIZE -METHOD -OUTPUT_FILE
+<b>Random graph generator</b>
 
-SIZE is the number of verticies
+Compile: <code>g++ -std=c++11 -o GraphGen GraphGen.cpp</code>
 
-METHOD should be either -1 or -2 (the two detailed in Dr. Spinrad's email)
+Run: <code>./GraphGen -SIZE -OUTPUT_FILE</code>
+
+SIZE: the number of verticies
 
 OUTPUT_FILE will be formatted the same as INPUT_FILE for MST above
 
------------------
 
-Prim's algorithm was implemented using an array.  This is the most naive method, taking O(|V|^2) time.
+<b>Algorithm comparison</b>
 
-Kruskal's algorithm was implemented using collapsing UNION-FIND.  However, the sorting algorithm used to sort the edges is STD::sort, a comparison-based sort. This means it cannot acheive the optimal running time of O(E α(V)) time, and instead the algorithm has a lower bound of E log|E|.
+Prim's algorithm is naive, taking O(|V|^2) time.
 
-Times were as follows:
+Kruskal's algorithm is implemented using collapsing UNION-FIND, and runs in O(E α(V)) time.
+
                     Kruskall's               Prim's
 Input Size: 200   Running time: ~0    Running time: 0.7
 Input Size: 400   Running time: .01   Running time: 4.94
 Input Size: 800   Running time: .06   Running time: 20.78
 Input Size: 1600  Running time: .20   Running time: ???
 Input Size: 3200  Running time: .98   Running time: ???
-
-Both generally follow their expected times.
-
-Unfortunately, I didn't have time to implement Sollin's algorithm.
