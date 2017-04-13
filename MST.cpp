@@ -10,8 +10,7 @@
 
 int size;
 
-void read(char* filename, std::vector<int>& data)
-{
+void read(char* filename, std::vector<int>& data) {
   std::ifstream infile;
   infile.open(filename);
 
