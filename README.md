@@ -32,9 +32,9 @@ Prim's algorithm is naive, taking O(|V|^2) time.
 
 Kruskal's algorithm is implemented using collapsing UNION-FIND, and runs in O(E α(V)) time.
 
-                    Kruskall's               Prim's
-Input Size: 200   Running time: ~0    Running time: 0.7
-Input Size: 400   Running time: .01   Running time: 4.94
-Input Size: 800   Running time: .06   Running time: 20.78
-Input Size: 1600  Running time: .20   Running time: ???
-Input Size: 3200  Running time: .98   Running time: ???
+                        Kruskall's           Prim's
+    Input Size: 200   Running time: ~0    Running time: 0.7
+    Input Size: 400   Running time: .01   Running time: 4.94
+    Input Size: 800   Running time: .06   Running time: 20.78
+    Input Size: 1600  Running time: .20   Running time: ???
+    Input Size: 3200  Running time: .98   Running time: ???
